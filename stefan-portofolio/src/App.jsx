@@ -19,6 +19,10 @@ function App() {
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
+    const [arataProiecte, setArataProiecte] = useState(false);
+    const schimbaStarea = () => {
+        setArataProiecte(!arataProiecte);
+    };
     return (
         <>
             <button
@@ -56,7 +60,29 @@ function App() {
                     </a>
                     <a href="https://www.linkedin.com/in/gogea-stefan-2b4a26241/" className="button-link">LinkedIn</a>
                     <a href="https://github.com/stefann777" className="button-link">GitHub</a>
+    
+                <button className="button-link" onClick = {schimbaStarea}> 
+                    {arataProiecte ? 'Proiecte' : 'Proiecte'}
+                </button>   
                 </div>
+                
+                {arataProiecte && (
+                <div className="lista-proiecte fade-in">
+                    <a href="https://stefann777.github.io/blog-preview-card/" target="_blank" rel ="noreferrer" className ="button-link">
+                        Blog Preview Card
+                    </a>
+                    <a href="https://stefann777.github.io/social-links-profile-card/" target="_blank" rel ="noreferrer" className ="button-link">
+                        Social Links Profile
+                    </a>
+                    <a href="https://stefann777.github.io/nft-card/" target="_blank" rel ="noreferrer" className ="button-link">
+                        NFT Card
+                    </a>
+                    <a href="https://stefann777.github.io/result-sum/" target="_blank" rel ="noreferrer" className ="button-link">
+                        Results Summary
+                    </a>
+                </div>
+                )}
+                
             </div>
         </>
     )
